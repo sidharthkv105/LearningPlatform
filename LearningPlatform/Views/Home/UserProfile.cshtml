@@ -1,0 +1,110 @@
+﻿@{
+    ViewBag.Title = "User Profile";
+    var progressData = ViewBag.ProgressData as System.Data.DataTable;
+    var achievementsData = ViewBag.AchievementsData as System.Data.DataTable;
+    var leaderboardData = ViewBag.LeaderboardData as System.Data.DataTable;
+    var rewardData = ViewBag.RewardData as System.Data.DataTable;
+}
+
+<div class="theme-switcher">
+    <button class="theme-button" data-theme="">Default Theme</button>
+    <button class="theme-button" data-theme="dark-theme">Dark Theme</button>
+    <button class="theme-button" data-theme="blue-theme">Blue Theme</button>
+</div>
+
+<div class="profile-container">
+    <h2>Welcome to Your Profile</h2>
+
+    <!-- User Progress Section -->
+    <div class="section">
+        <h3>Your Progress</h3>
+        @if (progressData.Rows.Count > 0)
+        {
+            <div class="progress-list">
+                @foreach (System.Data.DataRow row in progressData.Rows)
+                {
+                    <div class="progress-item">
+                        <span>Course ID: @row["CourseId"]</span>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar">
+                                <div class="progress" style="width: @row["ProgressPercentage"]%"></div>
+                            </div>
+                            <span>@row["ProgressPercentage"]% Completed</span>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+        else
+        {
+            <p>No progress to display.</p>
+        }
+    </div>
+
+    <!-- Achievements Section -->
+    <div class="section">
+        <h3>Your Achievements</h3>
+        <div class="achievements-container">
+            @if (achievementsData.Rows.Count > 0)
+            {
+                foreach (System.Data.DataRow row in achievementsData.Rows)
+                {
+                    <div class="achievement">
+                        <img src="/Images/badge.png" alt="@row["Badge"]" class="badge-img" />
+                        <span class="badge-name">@row["Badge"]</span>
+                        <div class="achievement-details">
+                            <p>@row["Description"]</p>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <p>No achievements to display.</p>
+            }
+        </div>
+    </div>
+
+    <!-- Leaderboard Section -->
+    <div class="section">
+        <h3>Leaderboard</h3>
+        <table class="leaderboard-table">
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Username</th>
+                    <th>Points</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (ViewBag.LeaderboardData != null && ViewBag.LeaderboardData.Count > 0)
+                {
+                    var currentUserId = ViewBag.CurrentUserId; 
+
+                    foreach (var item in ViewBag.LeaderboardData)
+                    {
+                        var isCurrentUser = item.UserId.ToString() == currentUserId; 
+
+                        <tr class="@(isCurrentUser ? "highlight" : "")">
+                            <td>@item.RankId</td>
+                            <td>@item.Username</td> 
+                            <td>@item.Points</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+
+
+
+    <!-- Reward Tracker Section -->
+    <div class="section">
+        <h3>Reward Tracker</h3>
+        <p><strong>Next Reward Available At:  </strong><span id="countdown"></span></p>
+    </div>
+
+    <script src="~/Scripts/counter.js"></script>
+
+
+</div>

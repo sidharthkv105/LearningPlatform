@@ -1,0 +1,336 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    background-color: #e3e2e2;
+    margin: 0;
+    padding: 0;
+    color: black;
+}
+
+.progress-bar-container {
+    margin: 10px 0;
+}
+
+.progress-bar {
+    width: 100%;
+    background-color: #e0e0e0;
+    height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background-color: #76c7c0;
+    transition: width 1s ease;
+}
+
+.profile-container {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+.section {
+    margin-bottom: 30px;
+    background-color: #f9f9f9; 
+    padding: 20px;
+    border-radius: 8px;
+}
+
+h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.achievements-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.achievement {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 10px;
+    width: 250px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.badge-img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.badge-name {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.achievement-details {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.leaderboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.leaderboard-table th, .leaderboard-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.leaderboard-table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.leaderboard-table tr:hover {
+    background-color: #f5f5f5;
+}
+
+.highlight {
+    background-color: #ffe0b2;
+}
+
+#reward-timer {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    font-size: 1em;
+    color: #333;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.form-control {
+    width: 90%;
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+    .form-control:focus {
+        border-color: #4CAF50;
+        outline: none;
+    }
+
+.btn {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+    .btn:hover {
+        background-color: #45a049;
+    }
+
+.theme-switcher {
+    position: absolute; 
+    top: 10px; 
+    right: 10px; 
+    z-index: 100;
+    display: flex;
+    gap: 10px; 
+}
+
+.theme-button {
+    padding: 3px 5px;
+    font-size: 1em;
+    background-color: #3a5b58; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 5px; 
+}
+
+.theme-button:hover {
+    background-color: #26938a; 
+}
+
+.theme-button:focus {
+    outline: none;
+    border: 2px solid #7d8584;
+}
+
+
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+
+body.dark-theme {
+    background-color: #333;
+    color: white;
+}
+
+body.blue-theme {
+    background-color: #add8e6;
+    color: black;
+}
+
+
+body.dark-theme .profile-container {
+    background-color: #222;
+    color: #ffffff; 
+}
+
+body .section {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+body.dark-theme .section {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+body.dark-theme h3 {
+    color: white; 
+}
+body.dark-theme h2 {
+    color: white; 
+}
+
+body.blue-theme h3 {
+    color: black; 
+}
+body.blue-theme h3 {
+    color: black; 
+}
+
+body .achievement {
+    display: flex;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+body.dark-theme .achievement {
+    background-color: #444;
+}
+
+body.blue-theme .achievement {
+    background-color: #b0e0e6;
+}
+
+body .badge-name {
+    font-weight: bold;
+    color: #ff9800; 
+}
+
+body .achievement-details {
+    color: #555;
+}
+
+body.dark-theme .achievement-details {
+    color: #ccc; 
+}
+
+body.blue-theme .achievement-details {
+    color: #333; 
+}
+
+body.dark-theme .achievement:hover {
+    background-color: #555; 
+}
+
+body.blue-theme .achievement:hover {
+    background-color: #add8e6; 
+}
+
+body .leaderboard-table tr:hover {
+    background-color: #f5f5f5;
+}
+
+body.dark-theme .leaderboard-table tr:hover {
+    background-color: #333;
+    color: #ffffff; 
+}
+
+body.blue-theme .leaderboard-table tr:hover {
+    background-color: #add8e6;
+}
+
+body .progress-bar {
+    width: 100%;
+    background-color: #e0e0e0;
+    height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+body .progress {
+    height: 100%;
+    background-color: #76c7c0;
+    transition: width 1s ease;
+}
+
+body.blue-theme .progress {
+    background-color: orange; 
+}
+
+body.blue-theme .leaderboard-table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+body.blue-theme .section {
+    background-color: #add8e6; 
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.highlight {
+    background-color: #799ab7; 
+    font-weight: bold;
+    color: #333;
+}
